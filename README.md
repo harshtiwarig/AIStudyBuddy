@@ -1,4 +1,4 @@
-# AI Study Buddy
+# AI Study Buddy PRO
 
 An intelligent web application designed to help students learn faster and more efficiently. This tool uses the power of generative AI to summarize text, create practice quizzes, generate flashcards, and analyze text from a live camera feed.
 
