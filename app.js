@@ -15,7 +15,7 @@ const cameraModal = document.getElementById('cameraModal');
 const closeModalBtn = document.getElementById('closeModalBtn');
 const notesList = document.getElementById('notesList');
 
-const apiKey = "AIzaSyBofZvhoCGwU04qXbBG4X9akZUBEnVQaNc";
+const apiKey = ""; //Your API KEY
 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
 let currentOutputForSaving = "";
