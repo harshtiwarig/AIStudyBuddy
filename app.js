@@ -15,8 +15,8 @@ const cameraModal = document.getElementById('cameraModal');
 const closeModalBtn = document.getElementById('closeModalBtn');
 const notesList = document.getElementById('notesList');
 
-const apiKey = ""; //Your API KEY
-const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+const apiUrl = `/.netlify/functions/getAiResponse`;
 
 let currentOutputForSaving = "";
 let cameraStream = null;
@@ -51,13 +51,10 @@ async function getAiResponse(prompt) {
     disableAllButtons();
 
     try {
-        const payload = {
-            contents: [{ role: "user", parts: [{ text: prompt }] }]
-        };
         const response = await fetch(apiUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt: prompt }) // Send the prompt in the body
         });
         if (!response.ok) {
             throw new Error(`API Error: ${response.status}`);
